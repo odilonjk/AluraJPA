@@ -1,0 +1,20 @@
+package br.com.caelum.financas.teste;
+
+import javax.persistence.EntityManager;
+
+import org.hibernate.query.Query;
+
+import br.com.caelum.financas.modelo.Conta;
+import br.com.caelum.financas.util.JPAUtil;
+
+public class TesteMovimentacaoConta {
+
+	public static void main(String[] args) {
+		
+		EntityManager em = new JPAUtil().getEntityManager();
+
+		Query query = em.createQuery("select c from Conta c join fetch c.movimentacoes");
+		
+	}
+	
+}
